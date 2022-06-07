@@ -2,7 +2,7 @@
 typedef long double ld;
 typedef long long ll;
 using namespace std;
-int inf = 1e9+5;                  //dijsktra's algorithm works for positive weight cycles only
+int inf = 1e9+5;                  //dijsktra's algorithm works for positive weights only
 int main(){
     int n,m;
     cin>>n>>m;
