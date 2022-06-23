@@ -1,0 +1,2 @@
+What actually is dynamic programming?
+    It is a technique to solve a problem with help with smaller subproblems. If any problem can be divided into subproblems, which in turn are divided into smaller subproblems, and if there are overlapping among these subproblems, then the solutions to these subproblems can be saved for future reference. In this way, efficiency of the CPU can be enhanced. This method of solving a solution is referred to as dynamic programming.
