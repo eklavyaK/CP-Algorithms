@@ -25,6 +25,7 @@ int main()
 			}
 		}
 	}
+	sort(v.begin(),v.end());
 	for(int j = 0; j<total; j++) {
         for(int i = 0; i<n; i++) cout<<v[j][i]<<" ";
         cout<<endl;
