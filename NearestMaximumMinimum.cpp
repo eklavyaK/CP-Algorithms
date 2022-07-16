@@ -2,13 +2,14 @@
 typedef long double ld;
 typedef long long ll;
 using namespace std;
-int NearestMaximumMinimum(vector<int> &v) {
+const int N = 2e5+5;
+vector<int> lnm(N,-1), rnm(N,-1); //vectors that contain the "INDEX" of left_nearest_maximum and right_nearest_maximum, if not present then -1
+void NearestMaximumMinimum(vector<int> &v) {
     int n = v.size();
-    vector<int> lnm(n,-1), rnm(n,-1);      //vectors that contain the left_nearest_maximum and right_nearest_maximum, if not present then -1
     stack<pair<int,int>> st;
     for(int i=0;i<n;i++){
         while(!st.empty()){
-            if(st.top().first>v[i]){        
+            if(st.top().first>v[i]){        //reverse the symbol in case of nearest minimum
                 lnm[i] = st.top().second;
                 break;
             }
@@ -19,7 +20,7 @@ int NearestMaximumMinimum(vector<int> &v) {
     while(!st.empty())st.pop();
     for(int i=n-1;i>=0;i--){
         while(!st.empty()){
-            if(st.top().first>v[i]){
+            if(st.top().first>v[i]){       //reverse the symbol in case of nearest minimum
                 rnm[i] = st.top().second;
                 break;
             }
