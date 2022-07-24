@@ -7,14 +7,11 @@ ll primsMST(int src, vector<vector<array<int,2>>> edge){
     ll cost = 0;
     int inf = 1e9+5;
     int n=edge.size();
-    vector<int> dist(n);
-    vector<int> parent(n);
-    for(int i=0;i<=n;i++){
-        dist[i]=inf;
-    }
+    vector<int> dist(n+1,inf);
+    vector<int> parent(n+1);
     dist[src]=0;
     parent[src]=src;
-    vector<int> visited(n);
+    vector<int> visited(n+1);
     set<array<int,2>> s;
     s.insert({0,src});
     while(!s.empty()){
