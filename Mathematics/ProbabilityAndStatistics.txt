@@ -5,7 +5,7 @@ Independent events:
     P(A/B) = P(A)
     P(A^B) = P(A)P(B)
 
-Bay's Theorem:
+Baye's Theorem:
                                      P(A)*P(B/A)
     P(A/B)     =              ------------------------
                                Total probability of B
@@ -16,6 +16,8 @@ Division of Card Deck of 52 cards:
     Red has 13 Diamonds and 13 Hearts
     
     Each pack of 13 cards are called suits
-    Each 13 pack has 1 king , 1 queen, 1 jack, 1 ace and 9 numbered cards from 2 to 10
+    Each 13 pack has 1 king, 1 queen, 1 jack, 1 ace and 9 numbered cards from 2 to 10
     King, queen and jack are called face cards
 
+Odds in favor:
+    If odds in favour is given as a:b then probability of occurrance of the event is a/(a+b)
