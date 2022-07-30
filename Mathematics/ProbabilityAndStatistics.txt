@@ -1,0 +1,21 @@
+Conditional Probability:
+    P(A/B) = P(A^B)/P(B)
+
+Independent events:
+    P(A/B) = P(A)
+    P(A^B) = P(A)P(B)
+
+Bay's Theorem:
+                                     P(A)*P(B/A)
+    P(A/B)     =              ------------------------
+                               Total probability of B
+
+Division of Card Deck of 52 cards:
+    26 Red  and 26 Black
+    Black has 13 spades and 13 clubs
+    Red has 13 Diamonds and 13 Hearts
+    
+    Each pack of 13 cards are called suits
+    Each 13 pack has 1 king , 1 queen, 1 jack, 1 ace and 9 numbered cards from 2 to 10
+    King, queen and jack are called face cards
+
