@@ -48,20 +48,16 @@ using namespace std;
 ll recursive_power(ll a, ll n){
     if(n==0) return 1;a%=mod1;
     ll k = recursive_power(a,n/2);
-    if(n%2){return (((k*k)%mod1)*a)%mod1;}
-    else{return ((k*k)%mod1);}
+    if(n%2)return (((k*k)%mod1)*a)%mod1;
+    return ((k*k)%mod1);
 }
 ll iterative_power(ll a, ll n){
-    string s = binary(n,64);
-    ll k = a%mod1;
-    ll result = (s[63]=='1'?k:1);
-    for(int i=62;i>=0;i--){
-        k = (k*k)%mod1;
-        if(s[i]=='1'){
-            result=(result*k)%mod1;
-        }
+    ll ans = 1;
+    while(n>0){
+        if(n&1)ans = (ans*a)%mod1;
+        a = (a*a)%mod1; n>>=1;
     }
-    return result;
+    return ans;
 }
 int main(){
     ll a,n; cin>>a>>n;
