@@ -1,5 +1,5 @@
 #include<iostream>
-
+#include<algorithm>
 using namespace std;
 /*Time complexity is log2(n)  which it takes at max just 30 iterations to find a number in a sorted array of size 10^9*/
 int main(){
