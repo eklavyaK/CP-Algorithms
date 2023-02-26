@@ -1,0 +1,5 @@
+Matrix transformation exponentiation:
+    related problem: https://www.codechef.com/ICL2017/problems-old/ICL1702
+
+Probablity and statistics especially expection
+    related problem: https://codeforces.com/contest/1778/problem/D
