@@ -1,54 +1,51 @@
-/*
-What is a mother vertex?
-    It is a vertex from where you can reach to all the vertices in the graph.
-
-In case of disconnected graph there is no mother vertex.
-In case of connected undirected graph, all the vertices are mother vertices.
-In case of Directed graph, there can be 0 or more mother vertices.
-*/
-
-//Program to find A MOTHER VERTEX
-
 #include<bits/stdc++.h>
-typedef long double ld;
+#define endl "\n"
+#define F first
+#define S second
+#define int long long
 typedef long long ll;
+typedef long double ld;
 using namespace std;
-vector<vector<int>> graph;
-vector<int> done;
-void dfs(int node){
-    done[node] = 1;
-    for(auto i : graph[node]){
-        if(!done[i]){
-            dfs(i);
-        }
-    }
-}
-int main(){
-    int n,m; cin>>n>>m;
-    graph.clear();
-    graph.resize(n+1);
-    done.clear();
-    done.resize(n+1);
-    for(int i=0;i<m;i++){
-        int u,v; cin>>u>>v;
+
+
+
+
+
+void code(int TC){
+    int n,m;
+    vector<vector<int>> graph(n+1);
+    while(m--){
+        int u,v;
         graph[u].push_back(v);
     }
-    int mth;
+    vector<bool> vis(n+1);
+    function<void(int)> dfs = [&](int node){
+        vis[node] = 1;
+        for(auto i : graph[node]){
+            if(!vis[i]) dfs(i);
+        }
+    };
+    int mother = 0;
+    fill(vis.begin(),vis.end(),0);
+    "if dfs run from a vertex can't visit all nodes in the graph then it is not mother, so we choose the best candidate for mother as the vertex which visits the remaining nodes, and finally run a dfs again from the candidate to confirm if it is actually a mother";
+    for(int i=1;i<=n;i++) if(!vis[i]) dfs(i), mother = i;
+    fill(vis.begin(),vis.end(),0);
+    dfs(mother);
     for(int i=1;i<=n;i++){
-        if(!done[i]){
-            mth = i;
-            dfs(i);
+        if(!vis[i]){
+            cout<<"MOTHERLESS"<<endl;
+            return;
         }
     }
-    done.clear();
-    done.resize(n+1);
-    dfs(mth);
-    for(int i=1;i<=n;i++){
-        if(!done[i]){
-            cout<<-1<<endl;
-            return 0;
-        }
-    }
-    cout<<mth<<endl;
+    cout<<mother<<endl;
+}
+
+
+signed main(){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);cout.tie(0);cerr.tie(0);
+    int TT = 1;
+    for (int TC = 1; TC <= TT; TC++) 
+        code(TC);
     return 0;
 }
