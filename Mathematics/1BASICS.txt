@@ -1,0 +1,67 @@
+ 
+Armstrong number: 
+if a number is equal to the sum of the cubes of its digits then number is called armstrong number. for ex:- 153
+153 = 1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153
+
+
+(a⊕x)⊕(b⊕x) = a⊕b           //Here x is any number
+This is the property of xor that value of xor of any two numbers a,b is equal to the value of xor of two numbers c,d which are obtained after taking the the xor of a,b respectively with any random number x, i.e. c=a⊕x , d=b⊕x;
+
+
+Meaning of modulo: two numbers are congruent modulo of a given number if they have same reminder. for ex: 1 and 6 are congruent modulo of 5.
+
+
+Fractional part of a number repeats when it reduced to it's lowest form has denominator whose prime factorisation contains atleast one prime number which is not 5 or 2. I.e. if denominator is 7, 9, 11, 3, 15, 30, 21.
+If denominator has only 5 and 2 in it's prime factorisation than fractional part will stop at finite decimal places
+
+
+Fibonacci numbers increase very rapidly. A positive number can always be expressed as the sum of distinct fibonacci numbers.
+To express a number as a sum of fibonacci numbers such that the 		number of fibonacci numbers used is minimized(repitition of 	fibonacci numbers is allowed). To do this we can always use 	distinct fibonacci numbers because it'll give exact same result as 	repitition. Just need to see which fibonacci number is closest to the 	current number and subtract the fibonacci number from the given 	number. And then repeat the process till number is reduced to 	zero. Keep track of the numbers used and this will give the 	minimum number of numbers required to make the sum of 	fibinacci numbers to a given numbers where number of the 	numbers used is minimized.
+
+
+Number of non-negative integral solutions of the equation
+x1+x2+x3..........................+xn = r
+is   (r+n-1)C(n-1)
+
+Number of positive integral solutions of the equation
+x1+x2+x3..........................+xn = r 
+is (r-1)C(n-1)
+
+Number of Derangements Dn=n![ ∑nk=0(−1)k/k!]
+Dn = n![ 1/0! - 1/1! + 1/2!....................(-1)n/n!]
+
+
+clarifying:
+1. number of ways to put n balls in m boxes (all the balls are distinct but not arranged in the box) = n^m
+2. number of ways to put n balls in m boxes (all the balls identical) = n+r-1Cr-1  = number of ways to add r numbers to get n
+3. number of ways get n from r numbers such no number is 0 = n-1Cr-1 = number of ways of selecting r-1 distinct indices from 1 to n-1,
+look carefully if you select r-1 indices between 1 to n-1, the number will automatically get divided into r non-zero segments.
+
+
+if n is a prime number then we can never get a number which is divisible by n by any sort of multiplication with numbers which are strictly less than n, i.e. numbers from 1 to n-1,
+	it is because when we multiply the numbers from 1 to n-1 in any 	sort of combination and frequency we can never obtain a number
+	which has one of it's prime factors as n, because all those products 	will be made of prime numbers less than n.
+
+
+If there is an array of length n. Guess the position which occurs most number of times in all non-empty subarrays of the array.
+The answer is simple, let's take a position i and find the number of subarrays it is contained in.  It'll be equal to (i-1) * (n-i) + 1, we have to maximize the multiplication term, we can see the sum of multiplicands is same so multiplication will be maximized when their difference is least. so i is equal to (n+1)/2 for odd and n/2, n/2+1, both occur same number of times.
+
+
+In case a problem asks us to determine pairs which equals a particular sum or product. And the maximum value of sum or product is not large we can simply brute force the solution. And for every pair we find the sum and add this pair at it's sum's index, as we can make vector of size of max sum possible because it is not large. Now after we got some pairs in a sum we need to know the maximum numbers pairs a sum can have to confirm an answer. This way we can solve many tricky questions of this type.
+To understand look at the problem: https://codeforces.com/contest/1500/problem/A . It is a classic trick
+
+
+We can convert a N ^ 3 dp to N ^ 2. This the trick I was looking for many days, finally found in problem:
+https://codeforces.com/contest/1859/problem/E
+It is a classic educational dp. Here we'are carrying forward dp maximums by increasing the the length of the segments at each step.
+Also if we don't break the modulus into various cases we can't solve it in N ^ 2. So this trick is quite educational too.
+
+
+Understanding results of division:
+	   _         _____          ________       ___________    ______________
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29
+
+if we just a multiple of (5 * i) then these i numbers  (5 * i), (5 * i + 1), (5 * i + 2), .... (5 * i + i - 1) when divided by i will give 5 as quotient. It is easy to see but it's a very helpful trick in case of problems which involves |_x/m_|
+Look at this problem: https://codeforces.com/problemset/problem/1561/D1
+
+
