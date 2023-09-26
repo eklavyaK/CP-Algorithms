@@ -65,3 +65,13 @@ if we just a multiple of (5 * i) then these i numbers  (5 * i), (5 * i + 1), (5 
 Look at this problem: https://codeforces.com/problemset/problem/1561/D1
 
 
+
+Sometimes the difficulty can be greatly reduced by just performing operation on the input array.
+Ex:-
+https://codeforces.com/gym/104471/problem/C
+The core of the problem wants us to find the number of subsequences of an array whose average is x. At first instance we would think of finding the number of subsequences which have length as k, and the sum as k*x, and we'd do this for each possible k. This would make the complexity as N*K * M (N is total elements, K is the max possible number of elements whose sum could be x, and M is the max possible sum with K elements). 
+Now if we just do one operations on the array as a[i] -= x. the problem becomes the number of subsequences whose sum is 0. Now notice the complexity is just N*M.
+Why it works, let's assume k elements whose sum is k*x, so
+a1 + a2 + .... + ak = k*x
+=> (a1-x) + (a2-x) + ... + (ak-x) = 0
+we can do this for every subsequence whose average is x.
